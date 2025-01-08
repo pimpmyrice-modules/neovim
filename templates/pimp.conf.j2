@@ -1,0 +1,92 @@
+{%- set highlights = {
+    "Comment": {"fg": term.color8, "bg": None},
+    "Constant": {"fg": term.color7, "bg": None},
+    "Variable": {"fg": term.color9, "bg": None},
+    "@variable": {"fg": term.color9, "bg": None},
+    "String": {"fg": term.color2, "bg": None},
+    "Character": {"fg": term.color3, "bg": None},
+    "Number": {"fg": term.color4, "bg": None},
+    "Boolean": {"fg": term.color5, "bg": None},
+    "Float": {"fg": term.color6, "bg": None},
+
+    "Identifier": {"fg": term.color10, "bg": None},
+    "Function": {"fg": term.color4, "bg": None},
+
+    "Statement": {"fg": term.color1, "bg": None},
+    "Conditional": {"fg": term.color6, "bg": None},
+    "Repeat": {"fg": term.color9, "bg": None},
+    "Label": {"fg": term.color11, "bg": None},
+    "Operator": {"fg": term.color3, "bg": None},
+    "Keyword": {"fg": term.color5, "bg": None},
+    "Exception": {"fg": term.color12, "bg": None},
+
+    "PreProc": {"fg": term.color9, "bg": None},
+    "Include": {"fg": term.color5, "bg": None},
+    "Define": {"fg": term.color7, "bg": None},
+    "Macro": {"fg": term.color8, "bg": None},
+    "PreCondit": {"fg": term.color6, "bg": None},
+
+    "Type": {"fg": term.color5, "bg": None},
+    "StorageClass": {"fg": term.color11, "bg": None},
+    "Structure": {"fg": term.color12, "bg": None},
+    "Typedef": {"fg": term.color10, "bg": None},
+
+    "Special": {"fg": term.color3, "bg": None},
+    "SpecialChar": {"fg": term.color4, "bg": None},
+    "Tag": {"fg": term.color6, "bg": None},
+    "Delimiter": {"fg": term.color9, "bg": None},
+    "SpecialComment": {"fg": term.color8, "bg": None},
+    "Debug": {"fg": term.color0, "bg": None},
+
+    "Underlined": {"fg": term.color12, "bg": None},
+    "Ignore": {"fg": term.color0, "bg": None},
+
+    "Error": {"fg": term.color0, "bg": None},
+    "Todo": {"fg": term.color13, "bg": None},
+
+    "ErrorMsg": {"fg": term.color0, "bg": None},
+    "WarningMsg": {"fg": term.color14, "bg": None},
+    "InfoMsg": {"fg": term.color11, "bg": None},
+    "HintMsg": {"fg": term.color10, "bg": None},
+
+    "Title": {"fg": term.color11, "bg": None},
+    "CursorLine": {"bg": border.inactive},
+    "CursorColumn": {"fg": term.color15, "bg": None},
+    "LineNr": {"fg": term.color8, "bg": None},
+    "CursorLineNr": {"fg": term.color7, "bg": None},
+    "Visual": {"fg": primary.fg, "bg": primary.bg},
+    "Search": {"fg": term.color1, "bg": None},
+    "IncSearch": {"fg": term.color6, "bg": None},
+    "MatchParen": {"fg": term.color5, "bg": None},
+    "Pmenu": {"fg": term.color15, "bg": None},
+    "PmenuSel": {"fg": term.color3, "bg": None},
+    "StatusLine": {"fg": term.color4, "bg": None},
+    "StatusLineNC": {"fg": term.color8, "bg": None},
+    "VertSplit": {"fg": term.color9, "bg": None},
+    "WildMenu": {"fg": term.color2, "bg": None},
+    "TabLine": {"fg": term.color6, "bg": None},
+    "TabLineSel": {"fg": term.color7, "bg": None},
+    "TabLineFill": {"fg": term.color9, "bg": None},
+
+    "Cursor": {"fg": term.color0, "bg": term.color15},  
+    "VisualNOS": {"fg": term.color2, "bg": None},
+    "Search": {"fg": term.color1, "bg": None},
+    "IncSearch": {"fg": term.color6, "bg": None},
+
+    "Underlined": {"fg": term.color12, "bg": None},
+    "SpellBad": {"fg": term.color0, "bg": term.color9},
+    "SpellCap": {"fg": term.color0, "bg": term.color8},
+    "SpellLocal": {"fg": term.color0, "bg": term.color10},
+    "SpellRare": {"fg": term.color0, "bg": term.color11},
+
+    "SpecialKey": {"fg": term.color3, "bg": None},
+    "Whitespace": {"fg": term.color8, "bg": None},
+    "Normal": {"fg": term.color7, "bg": None},
+    "NormalNC": {"fg": term.color7, "bg": None}
+} -%}
+
+{% for name, colors in highlights.items() -%}
+{% for color_name, color in colors.items() -%}
+{{ name + "_" + color_name }} = {{ colors[color_name] }}
+{% endfor %}
+{% endfor %}
