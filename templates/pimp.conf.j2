@@ -1,5 +1,5 @@
 {%- set highlights = {
-    "Comment": {"fg": term.color8, "bg": None},
+    "Comment": {"fg": dialog.fg, "bg": dialog.bg},
     "Constant": {"fg": term.color7, "bg": None},
     "Variable": {"fg": term.color9, "bg": None},
     "@variable": {"fg": term.color9, "bg": None},
@@ -35,7 +35,7 @@
     "SpecialChar": {"fg": term.color4, "bg": None},
     "Tag": {"fg": term.color6, "bg": None},
     "Delimiter": {"fg": term.color9, "bg": None},
-    "SpecialComment": {"fg": term.color8, "bg": None},
+    "SpecialComment": {"fg": dialog.fg, "bg": dialog.bg},
     "Debug": {"fg": term.color0, "bg": None},
 
     "Underlined": {"fg": term.color12, "bg": None},
@@ -52,7 +52,7 @@
     "Title": {"fg": term.color11, "bg": None},
     "CursorLine": {"bg": border.inactive},
     "CursorColumn": {"fg": term.color15, "bg": None},
-    "LineNr": {"fg": term.color8, "bg": None},
+    "LineNr": {"fg": muted.bg, "bg": None},
     "CursorLineNr": {"fg": term.color7, "bg": None},
     "Visual": {"fg": primary.fg, "bg": primary.bg},
     "Search": {"fg": secondary.fg, "bg": secondary.bg},
@@ -79,8 +79,13 @@
 
     "SpecialKey": {"fg": term.color3, "bg": None},
     "Whitespace": {"fg": term.color8, "bg": None},
-    "Normal": {"fg": term.color7, "bg": None},
-    "NormalNC": {"fg": term.color7, "bg": None}
+    "Normal": {"fg": normal.fg, "bg": None},
+    "NormalNC": {"fg": normal.fg, "bg": None},
+    "NormalFloat": {"fg": normal.fg, "bg": normal.bg},
+
+    
+    "IndentLine": {"fg": border.inactive, "bg": None},
+    "IndentLineCurrent": {"fg": border.active, "bg": None},
 } -%}
 
 {% for name, colors in highlights.items() -%}
