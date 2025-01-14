@@ -83,13 +83,50 @@
     "NormalNC": {"fg": normal.fg, "bg": None},
     "NormalFloat": {"fg": normal.fg, "bg": normal.bg},
 
+    "Conceal": {"fg": muted.bg, "bg": None},
     
     "IndentLine": {"fg": border.inactive, "bg": None},
     "IndentLineCurrent": {"fg": border.active, "bg": None},
+
+    "lualine_a_normal": {"fg": muted.bg, "bg": None},
+    "lualine_b_normal": {"fg": muted.bg, "bg": None},
+    "lualine_c_normal": {"fg": muted.bg, "bg": None},
+    "lualine_x_normal": {"fg": muted.bg, "bg": None},
+    "lualine_y_normal": {"fg": muted.bg, "bg": None},
+    "lualine_z_normal": {"fg": muted.bg, "bg": None},
+
+    "lualine_a_insert": {"fg": accent.fg, "bg": accent.bg},
+    "lualine_b_insert": {"fg": muted.bg, "bg": None},
+    "lualine_c_insert": {"fg": muted.bg, "bg": None},
+    "lualine_x_insert": {"fg": muted.bg, "bg": None},
+    "lualine_y_insert": {"fg": muted.bg, "bg": None},
+    "lualine_z_insert": {"fg": muted.bg, "bg": None},
+
+    "lualine_a_visual": {"fg": primary.fg, "bg": primary.bg},
+    "lualine_b_visual": {"fg": muted.bg, "bg": None},
+    "lualine_c_visual": {"fg": muted.bg, "bg": None},
+    "lualine_x_visual": {"fg": muted.bg, "bg": None},
+    "lualine_y_visual": {"fg": muted.bg, "bg": None},
+    "lualine_z_visual": {"fg": muted.bg, "bg": None},
+
+    "lualine_a_replace": {"fg": normal.fg, "bg": None},
+    "lualine_b_replace": {"fg": muted.bg, "bg": None},
+    "lualine_c_replace": {"fg": muted.bg, "bg": None},
+    "lualine_x_replace": {"fg": muted.bg, "bg": None},
+    "lualine_y_replace": {"fg": muted.bg, "bg": None},
+    "lualine_z_replace": {"fg": muted.bg, "bg": None},
+
+    "lualine_a_command": {"fg": normal.fg, "bg": None},
+    "lualine_b_command": {"fg": muted.bg, "bg": None},
+    "lualine_c_command": {"fg": muted.bg, "bg": None},
+    "lualine_x_command": {"fg": muted.bg, "bg": None},
+    "lualine_y_command": {"fg": muted.bg, "bg": None},
+    "lualine_z_command": {"fg": muted.bg, "bg": None}
+
 } -%}
 
 {% for name, colors in highlights.items() -%}
 {% for color_name, color in colors.items() -%}
-{{ name + "_" + color_name }} = {{ colors[color_name] }}
+{{ name + "|" + color_name }} = {{ colors[color_name] }}
 {% endfor %}
 {% endfor %}
