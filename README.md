@@ -6,5 +6,5 @@
 ## Set up
 
 ```bash
-pimp clone module pimp://neovim
+pimp clone module neovim
 ```

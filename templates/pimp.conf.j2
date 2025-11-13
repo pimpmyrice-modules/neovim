@@ -1,5 +1,5 @@
 {%- set highlights = {
-    "Comment": {"fg": dialog.fg, "bg": dialog.bg},
+    "Comment": {"fg": muted.bg, "bg": None},
     "Constant": {"fg": term.color7, "bg": None},
     "Variable": {"fg": term.color9, "bg": None},
     "@variable": {"fg": term.color9, "bg": None},
@@ -23,7 +23,7 @@
     "PreProc": {"fg": term.color9, "bg": None},
     "Include": {"fg": term.color5, "bg": None},
     "Define": {"fg": term.color7, "bg": None},
-    "Macro": {"fg": term.color8, "bg": None},
+    "Macro": {"fg": term.color7, "bg": None},
     "PreCondit": {"fg": term.color6, "bg": None},
 
     "Type": {"fg": term.color5, "bg": None},
@@ -39,7 +39,7 @@
     "Debug": {"fg": term.color1, "bg": None},
 
     "Underlined": {"fg": term.color12, "bg": None},
-    "Ignore": {"fg": term.color0.alt, "bg": None},
+    "Ignore": {"fg": term.color0.adjusted(sat="-5", val="-5"), "bg": None},
 
     "Error": {"fg": term.color2, "bg": None},
     "Todo": {"fg": term.color13, "bg": None},
@@ -50,7 +50,7 @@
     "HintMsg": {"fg": term.color10, "bg": None},
 
     "Title": {"fg": term.color11, "bg": None},
-    "CursorLine": {"bg": border.inactive},
+    "CursorLine": {"bg": normal.bg.adjusted(val="-10") if "light" in mode else normal.bg.adjusted(val="+10")},
     "CursorColumn": {"fg": term.color15, "bg": None},
     "LineNr": {"fg": muted.bg, "bg": None},
     "CursorLineNr": {"fg": term.color7, "bg": None},
@@ -121,8 +121,9 @@
     "lualine_c_command": {"fg": muted.bg, "bg": None},
     "lualine_x_command": {"fg": muted.bg, "bg": None},
     "lualine_y_command": {"fg": muted.bg, "bg": None},
-    "lualine_z_command": {"fg": muted.bg, "bg": None}
+    "lualine_z_command": {"fg": muted.bg, "bg": None},
 
+    "WinBar": {"fg": muted.bg, "bg": None}
 } -%}
 
 {% for name, colors in highlights.items() -%}
